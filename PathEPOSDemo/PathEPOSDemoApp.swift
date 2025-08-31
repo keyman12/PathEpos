@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct PathEPOSDemoApp: App {
+    init() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.backgroundColor = .clear
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
+                .background(Color(.systemBackground).ignoresSafeArea())
         }
     }
 }
